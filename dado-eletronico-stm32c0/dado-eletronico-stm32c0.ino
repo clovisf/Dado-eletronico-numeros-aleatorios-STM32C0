@@ -8,7 +8,7 @@ const int ledPin6 = PC14;
 const int buttonPin = PC15;  
 
 int numero = 0;
-int delay1= 500000; //em microssegundos
+int delay1= 100000; //em microssegundos
 int previousTime= 0;
 int contador= 0;
 
@@ -37,7 +37,7 @@ void loop() {
   if(micros() - previousTime > delay1){
     previousTime= micros();
     
-    if(!digitalRead(buttonPin) == HIGH){
+    if(digitalRead(buttonPin) == HIGH){
 
      //Gera número entre 1 e 6
     numero = int(random(1, 7));
